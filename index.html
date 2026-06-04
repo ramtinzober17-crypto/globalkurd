@@ -45,12 +45,12 @@ No Image
 position: "absolute", left: "8px", top: "50%", transform: "translateY(-50%)",
 background: "rgba(255,255,255,0.85)", border: "none", width: "32px", height: "32px",
 cursor: "pointer", fontSize: "16px", display: "flex", alignItems: "center", justifyContent: "center",
-}}>‹</button>
+}}>Â‹</button>
 <button onClick={e => { e.stopPropagation(); setImgIndex(i => (i + 1) % imgs.length); }} style={{
 position: "absolute", right: "8px", top: "50%", transform: "translateY(-50%)",
 background: "rgba(255,255,255,0.85)", border: "none", width: "32px", height: "32px",
 cursor: "pointer", fontSize: "16px", display: "flex", alignItems: "center", justifyContent: "center",
-}}>›</button>
+}}>Â›</button>
 {/* Dot indicators */}
 <div style={{ position: "absolute", bottom: "10px", left: "50%", transform: "translateX(-50%)", display: "flex", gap: "6px" }}>
 {imgs.map((_, i) => (
@@ -135,9 +135,9 @@ setForm(f => ({ ...f, images: f.images.filter((_, i) => i !== idx) }));
 }
 
 function handleSave() {
-if (!form.name || !form.price) return;
+if (!form.nameÂ || !form.price) return;
 if (editProduct) {
-setProducts(ps => ps.map(p => p.id === editProduct.id ? { ...p, ...form, price: Number(form.price) } : p));
+setProducts(ps => ps.map(p =>Â p.idÂ === editProduct.id ? { ...p, ...form, price: Number(form.price) } : p));
 } else {
 setProducts(ps => [...ps, { id: Date.now(), ...form, price: Number(form.price) }]);
 }
@@ -147,10 +147,10 @@ setEditProduct(null);
 
 function startEdit(p) {
 setEditProduct(p);
-setForm({ name: p.name, price: String(p.price), category: p.category, description: p.description, images: p.images || [] });
+setForm({ name:Â p.name, price: String(p.price), category: p.category, description: p.description, images: p.images || [] });
 }
 
-function deleteProduct(id) { setProducts(ps => ps.filter(p => p.id !== id)); }
+function deleteProduct(id) { setProducts(ps => ps.filter(p =>Â p.idÂ !== id)); }
 
 const navLinks = [
 { label: isAdmin ? "Admin Panel" : "Admin", action: () => setView(isAdmin ? "admin" : "login") },
@@ -182,7 +182,7 @@ onMouseLeave={e => e.target.style.borderBottomColor = "transparent"}
 <div style={{ background: "linear-gradient(135deg,#1a1410 0%,#3d342c 100%)", color: "#fff", textAlign: "center", padding: "100px 32px" }}>
 <p style={{ letterSpacing: "6px", fontSize: "11px", color: "#c8b99a", textTransform: "uppercase", margin: "0 0 16px" }}>New Collection</p>
 <h1 style={{ fontFamily: "'Cormorant Garamond',Georgia,serif", fontSize: "clamp(42px,6vw,80px)", fontWeight: 300, margin: "0 0 20px", lineHeight: 1.1, letterSpacing: "2px" }}>Refined. Global. Kurd.</h1>
-<p style={{ fontSize: "15px", color: "#c8b99a", maxWidth: "440px", margin: "0 auto 40px", lineHeight: 1.8 }}>Clothing that carries identity — crafted for those who move between worlds.</p>
+<p style={{ fontSize: "15px", color: "#c8b99a", maxWidth: "440px", margin: "0 auto 40px", lineHeight: 1.8 }}>Clothing that carries identity Â— crafted for those who move between worlds.</p>
 <button onClick={() => document.getElementById("collection")?.scrollIntoView({ behavior: "smooth" })} style={{ background: "transparent", border: "1px solid #c8b99a", color: "#c8b99a", padding: "14px 48px", letterSpacing: "3px", fontSize: "11px", textTransform: "uppercase", cursor: "pointer" }}
 onMouseEnter={e => { e.target.style.background = "#c8b99a"; e.target.style.color = "#1a1410"; }}
 onMouseLeave={e => { e.target.style.background = "transparent"; e.target.style.color = "#c8b99a"; }}
@@ -212,10 +212,10 @@ onMouseLeave={e => { e.target.style.background = "transparent"; e.target.style.c
 <footer style={{ background: "#1a1410", color: "#c8b99a", textAlign: "center", padding: "48px 32px" }}>
 <img src={`data:image/jpeg;base64,${LOGO_B64}`} alt="GlobalKurd" style={{ height: "52px", width: "52px", objectFit: "contain", marginBottom: "16px", opacity: 0.9 }} />
 <p style={{ fontFamily: "'Cormorant Garamond',Georgia,serif", fontSize: "18px", letterSpacing: "4px", margin: "0 0 8px" }}>GLOBALKURD</p>
-<p style={{ fontSize: "12px", opacity: 0.6, margin: 0 }}>© 2024 GlobalKurd. All rights reserved.</p>
+<p style={{ fontSize: "12px", opacity: 0.6, margin: 0 }}>Â© 2024 GlobalKurd. All rights reserved.</p>
 </footer>
 </div>
 ...
 
-[Message clipped]  View entire message
+[Message clipped]Â Â View entire message
 v
